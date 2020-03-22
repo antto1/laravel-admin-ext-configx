@@ -1,18 +1,17 @@
 {
-    "name": "ichynul/configx",
+    "name": "antto1/laravel-admin-ext-configx",
     "description": "laravel-admin extension configx",
     "type": "library",
     "keywords": ["laravel-admin", "extension"],
-    "homepage": "https://github.com/ichynul/configx",
+    "homepage": "https://github.com/antto1/laravel-admin-ext-configx",
     "license": "MIT",
     "authors": [{
-        "name": "ichynul",
-        "email": "ichynul@outlook.com"
+        "name": "antto1"
     }],
     "require": {
         "php": ">=7.0.0",
-        "encore/laravel-admin": "~1.6",
-        "laravel-admin-ext/config": "^1.0",
+        "antto1/laravel-admin": "~1.6",
+        "antto1/laravel-admin-ext-config": "^1.0",
         "ichynul/row-table": "^1.1.0"
     },
     "require-dev": {
