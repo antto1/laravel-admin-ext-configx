@@ -10,7 +10,7 @@
     }],
     "require": {
         "php": ">=7.0.0",
-        "antto1/laravel-admin": "~2.*",
+        "antto1/laravel-admin": "~2.0",
         "antto1/laravel-admin-ext-config": "^1.0",
         "ichynul/row-table": "^1.1.0"
     },
