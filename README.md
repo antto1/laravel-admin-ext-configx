@@ -7,7 +7,7 @@ need to install laravel-admin-ext/config first, see https://github.com/laravel-a
 Then run :
 
 ```
-$ composer require ichynul/configx
+$ composer require antto1/laravel-admin-ext-configx
 ```
 
 Then run:
@@ -29,7 +29,7 @@ Add a tabs config in `config/admin.php`:
                 'uplaod' => '上传设置',
                 'image' => '' // if tab name is empty, get from trans : trans('admin.configx.tabs.image'); tab名称留空则从翻译中获取
             ],
-            // Whether check group permissions. 
+            // Whether check group permissions.
             //if (!Admin::user()->can('confix.tab.base')) {/*hide base tab*/ } .
             'check_permission' => false
         ],
