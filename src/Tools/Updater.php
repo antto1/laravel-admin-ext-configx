@@ -193,9 +193,9 @@ class Updater
 
     protected static function saveValue($columns, $value)
     {
-        if ($value == null || $value == '') {
-            return;
-        }
+        // if ($value == null || $value == '') {
+        //     return;
+        // }
 
         $key = $columns;
 
@@ -219,7 +219,7 @@ class Updater
             return redirect()->back()->withInput();
         }
         $config = [];
-        $defaultVal = "1";
+        $defaultVal = "";
         if ($id > 0) {
             $config = ConfigxModel::findOrFail($id);
             $new_key = $config['name'];
