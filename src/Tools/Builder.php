@@ -290,10 +290,10 @@ class Builder
             if (!in_array($etype, ['image', 'file', 'multiple_image', 'multiple_file'])) {
 
                 if ($mode == static::UPDATE) {
-                    $field->rules('required');
+                    // $field->rules('required');
                 }
             }
-            
+
         } else {
 
             if (in_array($etype, ['image', 'file', 'multiple_image', 'multiple_file'])) {
@@ -301,7 +301,7 @@ class Builder
                 $field->uniqueName();
             } else {
                 if ($mode == static::UPDATE) {
-                    $field->rules('required');
+                    // $field->rules('required');
                 }
             }
         }
