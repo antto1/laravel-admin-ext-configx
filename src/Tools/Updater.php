@@ -28,10 +28,10 @@ class Updater
 
         if ($id > 0) {
             admin_toastr(trans('admin.update_succeeded'));
-            return redirect()->to(admin_base_path('configx/edit/' . $id) . '?do=new_config');
+            return redirect()->to(admin_url('configx/edit/' . $id) . '?do=new_config');
         } else {
             admin_toastr(trans('admin.save_succeeded'));
-            return redirect()->to(admin_base_path('configx/edit/0') . '?do=new_config');
+            return redirect()->to(admin_url('configx/edit/0') . '?do=new_config');
         }
     }
 
@@ -60,7 +60,7 @@ class Updater
 
         Session::put('tabindex', '0');
 
-        return redirect()->to(admin_base_path('configx/edit/' . $id) . '?do=tabs_config');
+        return redirect()->to(admin_url('configx/edit/' . $id) . '?do=tabs_config');
     }
 
     public static function saveConfigs($id = 0, $request)
@@ -140,10 +140,10 @@ class Updater
 
             static::getErrorIndex($errors[0], $failedValidators[0]->messages()->first(), $cx_options);
 
-            return redirect()->to(admin_base_path('configx/edit/' . $id))->withErrors($message->getMessages())->withInput();
+            return redirect()->to(admin_url('configx/edit/' . $id))->withErrors($message->getMessages())->withInput();
         }
 
-        return redirect()->to(admin_base_path('configx/edit/' . $id));
+        return redirect()->to(admin_url('configx/edit/' . $id));
     }
 
     /**

@@ -59,7 +59,7 @@ class Displayer
         } else {
             $tab->add($title, '<div class="row"><div class="col-sm-9">' . $formhtml . '</div>' . Tree::buildTree($id, $cx_options) . '</div>', false);
         }
-        $tab->addLink('x', admin_base_path('configx/edit/0'));
+        $tab->addLink('x', admin_url('configx/edit/0'));
 
         return static::createform($tab, $id);
     }
@@ -89,7 +89,7 @@ class Displayer
         }
 
         $tab->add($title, '<div class="row"><div class="col-sm-9">' . $formhtml . '</div>' . '</div>', true);
-        $tab->addLink('x', admin_base_path('configx/edit/' . $id) . '?do=new_config');
+        $tab->addLink('x', admin_url('configx/edit/' . $id) . '?do=new_config');
 
         return static::createform($tab, $id);
     }
@@ -121,7 +121,7 @@ class Displayer
 
         if (!Tool::checkPermission() || Admin::user()->can('confix.tab.' . 'new_config')) {
 
-            $tab->addLink('+', admin_base_path('configx/edit/0') . '?do=new_config');
+            $tab->addLink('+', admin_url('configx/edit/0') . '?do=new_config');
         }
 
         return static::createform($tab, $id);
@@ -141,7 +141,7 @@ class Displayer
         $form->pushField($html);
         $form->pushField($indexField);
         $form->pushField($doField);
-        $form->action(admin_base_path('configx/saveall/' . $id));
+        $form->action(admin_url('configx/saveall/' . $id));
         $form->attribute('enctype', 'multipart/form-data');
 
         $content = new Content();
@@ -156,8 +156,8 @@ class Displayer
             ->row('<div class="box box-info">' . $form->render() . '</div>')->row(view(
             'configx::script',
             [
-                'call_back' => admin_base_path('configx/sort'),
-                'del_url' => admin_base_path('config'),
+                'call_back' => admin_url('configx/sort'),
+                'del_url' => admin_url('config'),
                 'deleteConfirm' => trans('admin.delete_confirm'),
                 'confirm' => trans('admin.confirm'),
                 'cancel' => trans('admin.cancel'),

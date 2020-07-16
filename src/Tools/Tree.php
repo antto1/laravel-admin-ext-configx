@@ -86,7 +86,7 @@ class Tree
         $deleteTitle = trans('admin.delete');
         $saveTitle = trans('admin.save');
         $tabsEdit = !Tool::checkPermission() || Admin::user()->can('confix.tab.' . 'tabs_config') ?
-        admin_base_path('configx/edit/' . $id) . '?do=tabs_config' : '';
+        admin_url('configx/edit/' . $id) . '?do=tabs_config' : '';
 
         foreach ($tree as &$fields) {
             foreach ($fields as &$field) {
@@ -103,7 +103,7 @@ class Tree
                 }
                 $field['label'] = $label;
                 $field['options'] = $options;
-                $field['href'] = admin_base_path('configx/edit/' . $field['id']) . '?do=new_config';
+                $field['href'] = admin_url('configx/edit/' . $field['id']) . '?do=new_config';
                 $field['type_name'] = trans('admin.configx.element.' . $field['etype']);
                 if ($field['etype'] == 'normal' && isset($options['__element__'])) {
                     $field['type_name'] .= '+';
@@ -138,7 +138,7 @@ class Tree
                                 $label = trans('admin.configx.' . $tk);
                             }
                             $tds[$tk]['label'] = $label;
-                            $tds[$tk]['href'] = admin_base_path('configx/edit/' . $tableFields[$tk]['id']) . '?do=new_config';
+                            $tds[$tk]['href'] = admin_url('configx/edit/' . $tableFields[$tk]['id']) . '?do=new_config';
                             $tds[$tk]['options'] = $toptions;
                             $tds[$tk]['type_name'] = trans('admin.configx.element.' . $tableFields[$tk]['etype']);
                             if ($tableFields[$tk]['etype'] == 'normal' && isset($toptions['__element__'])) {
@@ -158,8 +158,8 @@ class Tree
             'deleteTitle' => $deleteTitle,
             'saveTitle' => $saveTitle,
             'tabsEdit' => $tabsEdit,
-            'call_back' => admin_base_path('configx/sort'),
-            'del_url' => admin_base_path('config'),
+            'call_back' => admin_url('configx/sort'),
+            'del_url' => admin_url('config'),
             'deleteConfirm' => trans('admin.delete_confirm'),
             'confirm' => trans('admin.confirm'),
             'cancel' => trans('admin.cancel'),

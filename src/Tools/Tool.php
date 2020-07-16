@@ -60,7 +60,7 @@ class Tool
 
                         $id = preg_replace('/^c_(\d+)_/i', '$1', $field->column());
 
-                        $field->options(['deleteUrl' => admin_base_path('configx/delfile/' . $id)]);
+                        $field->options(['deleteUrl' => admin_url('configx/delfile/' . $id)]);
                     }
 
                 } catch (\Exception $e) {
